@@ -23,7 +23,7 @@ class DBHelper:
 		connection = self.connect()
 		try:
 			# The following introduces a deliberate security flaw.  See section on SQL injection below
-			query = "INSERT INTO crimes (description) VALUES ('{}');".format(data)
+			query = "INSERT INTO crimes (description) VALUES (%s);"
 			with connection.cursor() as cursor:
 				cursor.execute(query)
 				connection.commit()
