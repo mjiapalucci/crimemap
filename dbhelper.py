@@ -71,7 +71,7 @@ class DBHelper:
 				named_crimes.append(named_crime)
 			return named_crimes
 		finally:
-			connection.close()  
-				}
+			connection.close()
+			
 
 
